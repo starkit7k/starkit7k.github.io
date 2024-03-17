@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="join1.css">
+    <link rel="shortcut icon" href="image/logo1.jpeg" type="image/x-icon">
+    <title>Join</title>
+</head>
+
+<body>
+    <div class="before">
+        <form action="backend.php">
+            <div class="join_col">
+                <div class="join_row">
+                    <h2>Joining Form</h2>
+                    <div class="form">
+                        <div class="name">
+                            <label for="Name">Name</label><br>
+                            <input type="text" required>
+                        </div>
+                        <div class="email">
+                            <label for="email">Email</label><br>
+                            <input required type="email">
+                        </div>
+                        <div class="number">
+                            <label for="mobile">Mobile No.</label><br>
+                            <input type="number" inputmode="numeric" required>
+                        </div>
+                        <div class="gender">
+                            <div>
+                                <label for="gender">Gender</label><br>
+                            </div>
+                            <div class="radio_buttons">
+                                <div>
+                                    <input type="radio" name="gender" required clas="male" id="male">
+                                    <label for="male">Male</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="gender" id="female" required class="female">
+                                    <label for="female">Female</label>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="address">
+                            <label for="address">Address</label><br>
+                            <input input="textarea" required>
+                        </div>
+
+                        <div class="join">
+                            <input type="submit" value="Join" class="join_btn">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
