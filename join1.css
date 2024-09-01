@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+body {
+    width: 100%;
+   
+    overflow: hidden;
+}
+/* styles.css */
+
+
+
+/* Modal Background */
+/* styles.css */
+
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
+
+.before::before {
+    content: "";
+    background: url(image/g5.jpg) no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.join_col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    z-index: 10;
+}
+
+.join_row {
+    border: 1px solid rgba(167, 139, 250);
+    background-color: rgba(17, 24, 39, 1);
+    padding: 20px;
+    border-radius: 7px;
+    width: 330px;
+    height: 606px;
+    background: transparent;
+    background: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.gender input {
+    accent-color: rgba(167, 139, 250);
+}
+
+.join_row h2 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-size: 38px;
+    margin-bottom: 10px;
+    color: rgba(167, 139, 250);
+}
+.form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.form div {
+    padding: 6px;
+    width: 100%;
+    /* margin-bottom: -22px; */
+}
+
+.form div input {
+    border: none;
+    outline: 0;
+    border: 1px solid rgba(55, 65, 81, 1);
+    color: rgba(243, 244, 246, 1);
+
+    font-size: 15px;
+    border-radius: 5px;
+    padding-left: 5px;
+    font-weight: 500px;
+width: 100%;
+    padding: 0.4rem 1rem;
+}
+
+.form div input:focus {
+    border-color: rgba(167, 139, 250);
+}
+
+.form div label {
+    font-size: 17px;
+    color: white;
+    /*color: rgba(156, 163, 175, 1);*/
+    margin-bottom: 5px;
+}
+
+.gender {
+    display: flex;
+    flex-direction: column;
+}
+.radio_buttons{
+    display: flex;
+}
+.radio_buttons div{
+    display: flex;
+}
+.gender input {
+    background-color: rgba(17, 24, 39, 1);
+    position: relative;
+    left: 0px;
+    cursor: pointer;
+}
+ 
+.male {
+    margin-top: 10px;
+}
+
+.female {
+    margin-left: 10px;
+}
+
+.address input {
+    background-color: rgba(17, 24, 39, 1);
+    width: 80%;
+    height: 68px;
+    padding: 5px;
+}
+
+.name input {
+    background-color: rgba(17, 24, 39, 1);
+}
+
+.email input {
+    background-color: rgba(17, 24, 39, 1);
+}
+
+.number input {
+    background-color: rgba(17, 24, 39, 1);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0px;
+}
+
+.join_btn {
+    display: block;
+    width: 80%;
+    background-color: rgba(167, 139, 250, 1);
+    padding: 0.75rem;
+    text-align: center;
+    color: rgba(17, 24, 39, 1);
+    border: none;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    border: none;
+    outline: none;
+}
+
+.join_btn:hover {
+    cursor: pointer;
+}
+input[type=radio] {
+    border: 0px;
+    width: 100%;
+    height: 20px;
+}
+
+/* 600px */
+@media (min-width:1200px) {
+    .before::before {
+        background-position: 0%;
+    }
+
+}
+@media (max-width:1200px) {
+    .before::before {
+        background-position: 1%;
+    }
+
+}
+@media screen and (max-width:355px) {
+    .join_row{
+        width: 93vw;
+        height: 66vh;
+    }
+    .form div input{
+        width: 100%;
+    }
+    input[type=radio] {
+        border: 0px;
+        width: 100%;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width:305px){
+    .join_row{
+        /* width: 93vw; */
+        height: 70vh;
+    }
+}

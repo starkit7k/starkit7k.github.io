@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <style>
+        .image-container {
+            position: relative;
+            display: inline-block;
+            margin: 10px;
+        }
+        .trash-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: red;
+            color: white;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .trash-icon:hover {
+            background: darkred;
+        }
+        img {
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Images</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="image" id="image" accept="image/*" required>
+        <button type="submit">Upload</button>
+    </form>
+    <div id="imageGallery"></div>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            fetch('upload.php', {
+                method: 'POST',
+                body: formData
+            }).then(response => response.json())
+              .then(data => {
+                  if (data.success) {
+                      displayImage(data.file);
+                  } else {
+                      alert('Upload failed');
+                  }
+              });
+        });
+
+        function displayImage(file) {
+            const imageGallery = document.getElementById('imageGallery');
+            const img = document.createElement('img');
+            img.src = file;
+            img.alt = 'Uploaded Image';
+            
+            const trashIcon = document.createElement('div');
+            trashIcon.className = 'trash-icon';
+            trashIcon.textContent = '🗑️';
+            trashIcon.onclick = function() {
+                deleteImage(file);
+            };
+
+            const container = document.createElement('div');
+            container.className = 'image-container';
+            container.appendChild(trashIcon);
+            container.appendChild(img);
+
+            imageGallery.appendChild(container);
+        }
+
+        function deleteImage(file) {
+            fetch('delete.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ file: file })
+            }).then(response => response.json())
+              .then(data => {
+                  if (data.success) {
+                      document.querySelector(`img[src="${file}"]`).parentElement.remove();
+                  } else {
+                      alert('Deletion failed');
+                  }
+              });
+        }
+    </script>
+</body>
+</html>
